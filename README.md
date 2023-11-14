@@ -124,3 +124,26 @@ cvs.push('e');
 console.log(cvs.head());    // ['a', 'b', 'd', 'e']
 console.log(cvs.history());
 ```
+## Задание 5. Глобальный переключатель
+```javascript
+function globalToggle(className) {
+  const elements = document.getElementsByClassName(className);
+  
+  if (elements.length === 0) {
+    return;
+  }
+  
+  if (className.endsWith('_active')) {
+    for (let i = 0; i < elements.length; i++) {
+      elements[i].classList.remove(className);
+      elements[i].classList.add(className.replace('_active', ''));
+    }
+  } else {
+    for (let i = 0; i < elements.length; i++) {
+      elements[i].classList.remove(className);
+      elements[i].classList.add(className + '_active');
+    }
+  }
+}
+```
+## Задание 6. Hit Or Run
