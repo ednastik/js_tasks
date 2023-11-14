@@ -1,5 +1,8 @@
 # js_tasks
-Task for UI course
+
+Задания для курса "Человеко-машинный интерфейс"
+Выполнила: Хрулёва Анастасия
+
 ## Задание 1. Custom Array.prototype.filter
 ```javascript
 /**
