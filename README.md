@@ -90,3 +90,37 @@ if ((typeof a != "number")||(typeof b != "number")){
     console.log(a + b);
 }
 ```
+## Задание 4. CVS на минималках
+```javascript
+function getMinimalCVS(arr) {
+    let history = [arr.slice()+""];
+    return {
+      head: function() {
+        return history[history.length - 1];
+      },
+      history: function() {
+        return history.map(item => item.split(","));
+      },
+      push: function(item) {
+        arr.push(item);
+        history.push(arr.slice()+"");
+      },
+      pop: function() {
+        let lastItem = arr.pop();
+        history.push(arr.slice()+"");
+        return lastItem;
+      }
+    };
+}
+
+const cvs = getMinimalCVS(['a', 'b', 'c']);
+
+console.log(cvs.head());    // ['a', 'b', 'c']
+console.log(cvs.pop());     // 'c'
+
+cvs.push('d');
+cvs.push('e');
+
+console.log(cvs.head());    // ['a', 'b', 'd', 'e']
+console.log(cvs.history());
+```
