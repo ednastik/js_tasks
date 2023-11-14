@@ -197,3 +197,17 @@ const spamText = isSpam(spamData, keyForSpamWords)
 const notSpamText = isSpam(notSpamData, keyForSpamWords)
 console.log(spamText, notSpamText)
 ```
+## Задание 10. Задача с собеседования
+```javascript
+function solutionFn(number) {
+    while (number >= 10) {
+        const arrayDigits = Array.from(String(number), Number);
+        let productDigits = arrayDigits.reduce((acc, digit) => acc * digit, 1);
+        number = productDigits;
+    }
+    return number
+}
+console.log(solutionFn(4)); // возвращает 4, так как уже одноразрядное
+console.log(solutionFn(42)); // возвращает 8, так как 4 * 2 = 8
+console.log(solutionFn(999)); // возвращает 2, так как 9 * 9 * 9 = 729, 7 * 2 * 9 = 126, 1 * 2 * 6 = 12, и наконец 1 * 2 = 2
+```
