@@ -147,3 +147,26 @@ function globalToggle(className) {
 }
 ```
 ## Задание 6. Hit Or Run
+```javascript
+function isPrime(numberRand) {
+    if (numberRand <= 1) return false;
+    for (let i = 2; i <= Math.sqrt(numberRand); i++) {
+      if (numberRand % i === 0) return false;
+    }
+    return true;
+  }
+
+function hitOrRun(a, b) {  
+    let randomNumber = Math.floor(Math.random() * (b - a + 1)) + a;
+    console.log(randomNumber)
+    if (isPrime(randomNumber)) {
+      return "run";
+    } else {
+      return "hit";
+    }
+  }
+  
+  // Пример использования
+  let result = hitOrRun(22, 30);
+  console.log(result); // Выведет "run" или "hit" в зависимости от рандома
+```
