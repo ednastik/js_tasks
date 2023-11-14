@@ -73,3 +73,20 @@ const resultObj = counttypes(initialObj);
 
 console.log(resultObj);
 ```
+## Задание 3. Ключи и свойства
+```javascript
+a = 10
+b = 3
+
+if ((typeof a != "number")||(typeof b != "number")){
+    if ((typeof a != "number")&&(typeof b != "number")) {
+        console.log("Operands are not numbers");
+    } else if ((typeof a != "number")) {
+        console.log("The left operand is not number");
+    } else {
+        console.log("The right operand is not number");     
+    }
+} else {
+    console.log(a + b);
+}
+```
